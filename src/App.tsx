@@ -1,12 +1,10 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+
 import './App.css'
 import ChaiCard from './components/ChaiCard'
 import ChaiList from './components/ChaiList'
 import type { Chai } from './types'
 import OrderForm from './components/OrderForm'
+import Card from './components/Card'
 
 const menu: Chai[] = [
   {id: 1, name: "Masala Chai", price: 25},
@@ -22,6 +20,12 @@ function App() {
       <OrderForm onSubmit={(order) => {
         console.log("Order received", order)
       }}/>
+
+      <div>
+        <Card title="Welcome to Chai House" footer={<button>Order Now</button>}>
+          <p>Enjoy the best chai in town!</p>
+        </Card>
+      </div>
     </>
   )
 }
